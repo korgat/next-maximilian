@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Icon from '@components/ui/Icon/Icon';
+import { Icon } from '@components/ui/Icon';
 
 import { IconsE } from '@components/ui/Icon/Icon.types';
 import { UserI } from '@interfaces/api/user';
