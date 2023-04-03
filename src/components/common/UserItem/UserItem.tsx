@@ -15,11 +15,11 @@ const UserItem: React.FC<UserItemI> = ({ user, className }) => {
 
   return (
     <div className={baseClass.join(' ')}>
-      <div className="text-gray-500">{user.name}</div>
+      <div className="text-gray-500 whitespace-nowrap">{user.name}</div>
       {user.photo ? (
-        <Image src={user.photo} alt="user photo" />
+        <Image className="w-10" src={user.photo} alt="user photo" />
       ) : (
-        <Icon icon={IconsE.USER} className="fill-gray-500 rounded-full" />
+        <Icon icon={IconsE.USER} className="fill-gray-500 rounded-full w-10" />
       )}
     </div>
   );
