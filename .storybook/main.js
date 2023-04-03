@@ -1,10 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  stories: [
-    '../src/components/**/*.stories.mdx',
-    '../src/components/**/*.stories.@(js|jsx|ts|tsx)',
-  ],
+  stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
@@ -36,6 +33,7 @@ module.exports = {
     config.resolve.alias['@hooks'] = path.join(__dirname, '../src/hooks');
     config.resolve.alias['@data'] = path.join(__dirname, '../src/data');
     config.resolve.alias['@config'] = path.join(__dirname, '../src/config');
+    config.resolve.alias['@styles'] = path.join(__dirname, '../src/styles');
 
     return config;
   },
