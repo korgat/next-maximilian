@@ -3,11 +3,12 @@ import { IconsE } from '../Icon/Icon.types';
 
 interface ButtonPropsI {
   className?: string;
-  text: string;
+  text?: string;
   leftIcon?: IconsE;
   rightIcon?: IconsE;
   outlined?: string;
   fill?: string;
+  onClick?: () => void;
 }
 
 const Button: React.FC<ButtonPropsI> = ({
@@ -17,6 +18,7 @@ const Button: React.FC<ButtonPropsI> = ({
   fill,
   leftIcon,
   rightIcon,
+  onClick,
   ...props
 }) => {
   const baseClass = ['flex items-center px-4 py-2 rounded-lg text-gray-500 hover:text-gray-400'];
@@ -28,10 +30,10 @@ const Button: React.FC<ButtonPropsI> = ({
   className && baseClass.push(className);
 
   return (
-    <button className={baseClass.join(' ')} type="button" {...props}>
-      {leftIcon && <Icon icon={leftIcon} className="w-6 mr-3" />}
+    <button onClick={onClick} className={baseClass.join(' ')} {...props}>
+      {leftIcon && <Icon icon={leftIcon} className={`w-6 ${text ? 'mr-3' : ''}`} />}
       <div className="font-medium text-md whitespace-nowrap">{text}</div>
-      {rightIcon && <Icon icon={rightIcon} className="w-6 ml-3" />}
+      {rightIcon && <Icon icon={rightIcon} className={`w-6 ${text ? 'ml-3' : ''}`} />}
     </button>
   );
 };

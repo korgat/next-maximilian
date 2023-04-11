@@ -1,10 +1,7 @@
-import { UserItem } from '@components/common/UserItem';
-import { Header } from '@modules/header';
+import ViewHomePage from '@components/views/ViewHomePage/ViewHomePage';
+import { meetupsMock } from '../__mock__/meetups';
 
-export default function Home() {
-  return (
-    <>
-      <Header />
-    </>
-  );
+export default function HomePage() {
+  const importantMeetups = meetupsMock.filter((obj) => obj.isImportant);
+  return <ViewHomePage meetups={importantMeetups} />;
 }

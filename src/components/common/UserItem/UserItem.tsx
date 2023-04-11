@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { Icon } from '@components/ui/Icon';
 
 import { IconsE } from '@components/ui/Icon/Icon.types';
-import { UserI } from '@interfaces/api/user';
+import { UserI } from '@interfaces/api/types';
 
 interface UserItemI {
   className?: string;
