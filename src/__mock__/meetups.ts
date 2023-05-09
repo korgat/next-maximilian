@@ -5,7 +5,9 @@ export const meetupsMock = [
     img: 'js-meetup.jpg',
     shortDesc: 'Join us for a night of talks on the latest trends in JavaScript development!',
     isImportant: false,
-    id: 1,
+    description:
+      'Join us for a night of talks on the latest trends in JavaScript development! This meetup is for anyone interested in learning more about the JavaScript programming language and its ecosystem. We will cover a wide range of topics, from front-end frameworks like React and Angular to back-end frameworks like Node.js. Whether you are a beginner or an experienced developer, there is something for everyone at this meetup. Come network with other JavaScript enthusiasts and share your knowledge!',
+    date: '2023-05-10',
   },
   {
     title: 'React Meetup',
@@ -13,7 +15,9 @@ export const meetupsMock = [
     img: 'react-meetup.jpg',
     shortDesc: 'Come learn about React and its ecosystem from industry experts!',
     isImportant: true,
-    id: 2,
+    description:
+      'Come learn about React and its ecosystem from industry experts! This meetup is for anyone interested in learning more about the React JavaScript library and its ecosystem. We will cover a wide range of topics, from state management with Redux to server-side rendering with Next.js. Whether you are a beginner or an experienced developer, there is something for everyone at this meetup. Come network with other React enthusiasts and share your knowledge!',
+    date: '2023-05-17',
   },
   {
     title: 'Node.js Meetup',
@@ -22,7 +26,9 @@ export const meetupsMock = [
     shortDesc:
       'Discover the power of Node.js and how it can transform your web development workflow.',
     isImportant: true,
-    id: 3,
+    description:
+      'Discover the power of Node.js and how it can transform your web development workflow! This meetup is for anyone interested in learning more about the Node.js runtime environment and its ecosystem. We will cover a wide range of topics, from building RESTful APIs with Express to using GraphQL with Apollo. Whether you are a beginner or an experienced developer, there is something for everyone at this meetup. Come network with other Node.js enthusiasts and share your knowledge!',
+    date: '2023-05-24',
   },
   {
     title: 'Angular Meetup',
@@ -30,58 +36,49 @@ export const meetupsMock = [
     img: 'angular-meetup.jpg',
     shortDesc: 'Join us for a deep dive into the Angular framework and its unique features.',
     isImportant: false,
-    id: 4,
+    description:
+      'Join us for a deep dive into the Angular framework and its unique features! This meetup is for anyone interested in learning more about the Angular front-end framework and its ecosystem. We will cover a wide range of topics, from component architecture to reactive programming with RxJS. Whether you are a beginner or an experienced developer, there is something for everyone at this meetup. Come network with other Angular enthusiasts and share your knowledge!',
+    date: '2023-05-31',
   },
   {
-    title: 'Vue.js Meetup',
-    address: '111 Cedar St, Anytown, USA',
-    img: 'vue-meetup.jpg',
-    shortDesc:
-      'Learn about the latest updates to the Vue.js framework and best practices for building Vue applications.',
+    title: 'JavaScript Meetup',
+    address: '123 Main St, Anytown, USA',
+    img: 'js-meetup.jpg',
+    shortDesc: 'Join us for a night of talks on the latest trends in JavaScript development!',
     isImportant: false,
-    id: 5,
+    description:
+      'Join us for a night of talks on the latest trends in JavaScript development! This meetup is for anyone interested in learning more about the JavaScript programming language and its ecosystem. We will cover a wide range of topics, from front-end frameworks like React and Angular to back-end frameworks like Node.js. Whether you are a beginner or an experienced developer, there is something for everyone at this meetup. Come network with other JavaScript enthusiasts and share your knowledge!',
+    date: '2023-05-10',
   },
   {
-    title: 'CSS Meetup',
-    address: '222 Elm St, Anytown, USA',
-    img: 'css-meetup.jpg',
-    shortDesc:
-      'Explore the world of CSS and how it can be used to create stunning user interfaces.',
-    isImportant: false,
-    id: 6,
-  },
-  {
-    title: 'HTML Meetup',
-    address: '333 Walnut St, Anytown, USA',
-    img: 'html-meetup.jpg',
-    shortDesc: 'Join us for a crash course in HTML and how it forms the foundation of the web.',
-    isImportant: false,
-    id: 7,
-  },
-  {
-    title: 'Web Accessibility Meetup',
-    address: '444 Cherry St, Anytown, USA',
-    img: 'accessibility-meetup.jpg',
-    shortDesc: 'Discover how to create accessible web content for users of all abilities.',
+    title: 'React Meetup',
+    address: '456 Oak St, Anytown, USA',
+    img: 'react-meetup.jpg',
+    shortDesc: 'Come learn about React and its ecosystem from industry experts!',
     isImportant: true,
-    id: 8,
+    description:
+      'Come learn about React and its ecosystem from industry experts! This meetup is for anyone interested in learning more about the React JavaScript library and its ecosystem. We will cover a wide range of topics, from state management with Redux to server-side rendering with Next.js. Whether you are a beginner or an experienced developer, there is something for everyone at this meetup. Come network with other React enthusiasts and share your knowledge!',
+    date: '2023-05-17',
   },
   {
-    title: 'Web Performance Meetup',
-    address: '555 Oak St, Anytown, USA',
-    img: 'performance-meetup.jpg',
+    title: 'Node.js Meetup',
+    address: '789 Maple St, Anytown, USA',
+    img: 'node-meetup.jpg',
     shortDesc:
-      'Learn how to optimize the performance of your web applications for lightning-fast load times.',
+      'Discover the power of Node.js and how it can transform your web development workflow.',
     isImportant: true,
-    id: 9,
+    description:
+      'Discover the power of Node.js and how it can transform your web development workflow! This meetup is for anyone interested in learning more about the Node.js runtime environment and its ecosystem. We will cover a wide range of topics, from building RESTful APIs with Express to using GraphQL with Apollo. Whether you are a beginner or an experienced developer, there is something for everyone at this meetup. Come network with other Node.js enthusiasts and share your knowledge!',
+    date: '2023-05-24',
   },
   {
-    title: 'Web Security Meetup',
-    address: '666 Maple St, Anytown, USA',
-    img: 'security-meetup.jpg',
-    shortDesc:
-      'Join us for a discussion on web security and how to protect your applications from attacks.',
+    title: 'Angular Meetup',
+    address: '101 Pine St, Anytown, USA',
+    img: 'angular-meetup.jpg',
+    shortDesc: 'Join us for a deep dive into the Angular framework and its unique features.',
     isImportant: false,
-    id: 10,
+    description:
+      'Join us for a deep dive into the Angular framework and its unique features! This meetup is for anyone interested in learning more about the Angular front-end framework and its ecosystem. We will cover a wide range of topics, from component architecture to reactive programming with RxJS. Whether you are a beginner or an experienced developer, there is something for everyone at this meetup. Come network with other Angular enthusiasts and share your knowledge!',
+    date: '2023-05-31',
   },
 ];

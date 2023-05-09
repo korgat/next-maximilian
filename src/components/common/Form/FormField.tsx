@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import { Path, UseFormRegister } from 'react-hook-form';
+import FieldContent from './FieldContent';
 
 interface FormFieldI<T> {
   className?: string;
@@ -9,14 +9,7 @@ interface FormFieldI<T> {
   register: UseFormRegister<T>;
   registerConf?: {
     required?: string;
-    minLength?: {
-      value: number;
-      message: string;
-    };
-    pattern?: {
-      value: RegExp;
-      message: string;
-    };
+    validate?: (value: string) => boolean | string;
   };
   errorMessage?: string | undefined;
 }
@@ -37,15 +30,14 @@ function FormField<T>({
 
   return (
     <div className="relative pb-6">
-      <label className="block font-semibold mb-2 px-2 capitalize">{label}</label>
-      {type === 'textArea' ? (
-        <textarea
-          className={baseClass.join(' ') + ' w-full resize-none'}
-          {...register(label, registerConf)}
-          {...props}></textarea>
-      ) : (
-        <input type={type} className={baseClass.join(' ')} {...register(label, registerConf)} />
-      )}
+      <FieldContent
+        register={register}
+        label={label}
+        baseClass={baseClass}
+        registerConf={registerConf}
+        type={type}
+        {...props}
+      />
       {errorMessage && <div className="text-red-500 absolute bottom-0 px-2">{errorMessage}</div>}
     </div>
   );

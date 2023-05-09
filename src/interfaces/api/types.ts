@@ -1,12 +1,16 @@
+import { ObjectId } from 'mongodb';
+
 export interface UserI {
   name: string;
   photo: string;
 }
-export interface MeetupI {
+export interface MeetupI<T = string> {
   title: string;
-  img: string;
+  image: string;
   address: string;
   shortDesc: string;
   isImportant: boolean;
-  id: number;
+  description: string;
+  date: string;
+  _id: T;
 }
