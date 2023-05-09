@@ -8,6 +8,7 @@ interface ButtonPropsI {
   rightIcon?: IconsE;
   outlined?: string;
   fill?: string;
+  type?: 'button' | 'submit';
   onClick?: () => void;
 }
 
@@ -18,6 +19,7 @@ const Button: React.FC<ButtonPropsI> = ({
   fill,
   leftIcon,
   rightIcon,
+  type = 'button',
   onClick,
   ...props
 }) => {
@@ -30,7 +32,7 @@ const Button: React.FC<ButtonPropsI> = ({
   className && baseClass.push(className);
 
   return (
-    <button onClick={onClick} className={baseClass.join(' ')} {...props}>
+    <button type={type} onClick={onClick} className={baseClass.join(' ')} {...props}>
       {leftIcon && <Icon icon={leftIcon} className={`w-6 ${text ? 'mr-3' : ''}`} />}
       <div className="font-medium text-md whitespace-nowrap">{text}</div>
       {rightIcon && <Icon icon={rightIcon} className={`w-6 ${text ? 'ml-3' : ''}`} />}

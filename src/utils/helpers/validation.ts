@@ -10,3 +10,7 @@ export function isValidImage(str: string) {
   const regex = /^https:\/\/wallpapercave\.com\//i;
   return regex.test(str);
 }
+export function isValidEmail(str: string) {
+  const emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
+  return emailRegex.test(str);
+}

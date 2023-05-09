@@ -1,15 +1,40 @@
+import FormField from '@components/common/Form/FormField';
 import Modal from '@components/common/Modal/Modal';
 import { Button } from '@components/ui/Button';
+import { isValidEmail } from '@utils/helpers/validation';
+
 import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+
+export type SubscribeFormValuesT = {
+  email: string;
+  receiveNotification: boolean;
+};
 
 const ViewAboutPage = () => {
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(true);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<SubscribeFormValuesT>({
+    defaultValues: {
+      email: '',
+      receiveNotification: false,
+    },
+  });
+
+  const submitHandler = (formData: SubscribeFormValuesT) => {
+    console.log(formData);
+
+    setShowModal(false);
+  };
+
   const subscribeClickHandler = () => {
     setShowModal(true);
   };
-  const confirmModalHandler = () => {
-    setShowModal(false);
-  };
+
   return (
     <>
       <div className="container mx-auto px-4 mt-10 mb-8">
@@ -49,9 +74,29 @@ const ViewAboutPage = () => {
       {showModal && (
         <Modal
           className="justify-center items-center"
-          onClose={() => setShowModal(false)}
-          onConfirm={confirmModalHandler}>
-          tyuyu
+          modalClassName="bg-white rounded-lg py-5 px-5"
+          onClose={setShowModal.bind(null, false)}>
+          <form className="w-[300px]" onSubmit={handleSubmit(submitHandler)}>
+            <FormField
+              label="email"
+              register={register}
+              registerConf={{
+                required: 'field is required',
+                validate: (inp) => isValidEmail(inp) || 'Invalid email',
+              }}
+              errorMessage={errors.email?.message}
+            />
+            <FormField label="receiveNotification" type="checkbox" register={register} />
+            <div className="flex justify-end gap-2">
+              <Button type="submit" className="mt-5" text="Subscribe" fill="true" />
+              <Button
+                className="mt-5"
+                outlined="true"
+                text="Cancel"
+                onClick={setShowModal.bind(null, false)}
+              />
+            </div>
+          </form>
         </Modal>
       )}
     </>

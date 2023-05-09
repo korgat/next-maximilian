@@ -6,7 +6,8 @@ import { Button } from '@components/ui/Button';
 import { MeetupI } from '@interfaces/api/types';
 import { useMutation } from '@tanstack/react-query';
 import { truncateString } from '@utils/helpers/string';
-import { isValidDate, isValidImage, isValidTitle } from '@utils/validation/meetup';
+import { isValidDate, isValidImage, isValidTitle } from '@utils/helpers/validation';
+
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 
