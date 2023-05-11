@@ -12,12 +12,13 @@ export type SubscribeFormValuesT = {
 };
 
 const ViewAboutPage = () => {
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<SubscribeFormValuesT>({
     defaultValues: {
       email: '',
@@ -33,6 +34,11 @@ const ViewAboutPage = () => {
 
   const subscribeClickHandler = () => {
     setShowModal(true);
+  };
+
+  const closeModalHandler = () => {
+    reset();
+    setShowModal(false);
   };
 
   return (
@@ -75,7 +81,7 @@ const ViewAboutPage = () => {
         <Modal
           className="justify-center items-center"
           modalClassName="bg-white rounded-lg py-5 px-5"
-          onClose={setShowModal.bind(null, false)}>
+          onClose={closeModalHandler}>
           <form className="w-[300px]" onSubmit={handleSubmit(submitHandler)}>
             <FormField
               label="email"
@@ -89,12 +95,7 @@ const ViewAboutPage = () => {
             <FormField label="receiveNotification" type="checkbox" register={register} />
             <div className="flex justify-end gap-2">
               <Button type="submit" className="mt-5" text="Subscribe" fill="true" />
-              <Button
-                className="mt-5"
-                outlined="true"
-                text="Cancel"
-                onClick={setShowModal.bind(null, false)}
-              />
+              <Button className="mt-5" outlined="true" text="Cancel" onClick={closeModalHandler} />
             </div>
           </form>
         </Modal>

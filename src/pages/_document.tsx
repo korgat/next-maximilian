@@ -7,6 +7,7 @@ export default function Document() {
       <body className="max-w-[1200px] mx-auto bg-gray-50">
         <Main />
         <NextScript />
+        <div id="modal"></div>
       </body>
     </Html>
   );
